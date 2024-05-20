@@ -1,0 +1,12 @@
+task: ch_mmlu
+dataset_path: notrichardren/english_chinese_mmlu
+dataset_name: null
+output_type: multiple_choice
+test_split: test
+doc_to_text: "Question: {{q_english}}\nChoices:\n{{a_chinese}}\n{{b_chinese}}\n{{c_chinese}}\n{{d_chinese}}\nPlease repeat answer verbatim:"
+doc_to_target: mmlu_answer
+doc_to_choice: "{{[a_chinese, b_chinese, c_chinese, d_chinese]}}"
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true
